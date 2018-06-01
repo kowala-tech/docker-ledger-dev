@@ -47,7 +47,7 @@ RUN apt-get update && \
 		git \
 		build-essential \
 		vim \
-		python3 python3-pip python-dev virtualenv \
+		python3 python3-pip python-pip python-dev virtualenv \
 		wget \
 		libc6-i386 libc6-dev-i386 \
 		libudev-dev libusb-1.0-0-dev
@@ -89,7 +89,6 @@ WORKDIR /home/workspace
 # To get around that, we set a environment variable to instruct
 # tooling to use the binary `python3`.
 ENV PYTHON python3
-RUN apt-get -y install python-pip
 RUN cd /home/workspace && pip3 install pillow && pip install pillow
 
 # For loading to work, we also need the Python loader
