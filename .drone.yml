@@ -1,0 +1,12 @@
+
+pipeline:
+
+  build:
+    image: plugins/docker
+    repo: kowalatech/ledger
+    secrets: [ docker_username, docker_password ]
+    tags: latest
+    dockerfile: Dockerfile
+    when:
+      branch: [master]
+      event: [push, tag]
